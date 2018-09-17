@@ -3,14 +3,11 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 import App from './App';
-import counterReducer from './store/counterReducer';
-import createStore from './redux/createStore';
+import  store from './store/store';
 import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 
-const initialState = {count: 0};
-const store = createStore(counterReducer, initialState);
 
 class Provider extends React.Component { 
 	getChildContext() { 

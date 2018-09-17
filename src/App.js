@@ -1,9 +1,12 @@
 import React from 'react';
 
 import connect from './redux/connect';
-import {increment, decrement, reset} from './store/counterActions';
+import {increment, decrement, getCount, reset} from './store/counterActions';
 
 class App extends React.Component {
+    componentDidMount() {
+        this.props.onGetCount();
+    }
     render() {
         return (
             <div className="counter">
@@ -27,6 +30,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+      onGetCount: () => dispatch(getCount()),
       onIncrement: amount => dispatch(increment(amount)),  
       onDecrement: amount => dispatch(decrement(amount)),    
       onReset: () => dispatch(reset()),      
