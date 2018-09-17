@@ -8,7 +8,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 import './index.css';
 
-
 class Provider extends React.Component { 
 	getChildContext() { 
         return { 

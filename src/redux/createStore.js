@@ -16,7 +16,7 @@ const createStore = (reducer, initalState) => {
         // Return unsibscribe (const unsub = subscribe(()=>{}))
         return () => callbacks.filter(cb=>cb!==callback);
     }
-    // Call with emty object to init currentState (first time we rendered component, state wasn't initialized - got )
+    // Call with emty object to init currentState (first time we rendered component, state wasn't initialized without it)
     dispatch({});
     return {getState, dispatch, subscribe};
 };
